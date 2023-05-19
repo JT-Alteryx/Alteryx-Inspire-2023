@@ -1,0 +1,758 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.1">
+  <Nodes>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="714" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output</Name>
+          <Abbrev>O</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>O Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Distance.Distance">
+        <Position x="438" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputDistance value="True" />
+          <ReturnNearest value="False" />
+          <DistToInsideEdge value="False" />
+          <OutputDriveTimeAndDistance value="False" />
+          <SpatialObjSource>SpatialObj</SpatialObjSource>
+          <SpatialObjDest>Destination_SpatialObj</SpatialObjDest>
+          <DriveTimeDataSet>Latest</DriveTimeDataSet>
+          <AllowReverseRoute value="True" />
+          <MaxDriveTime value="30" />
+          <DriveDistanceOnly value="False" />
+          <OutputCardinalDirection value="True" />
+          <OutputDirectionDegrees value="False" />
+          <IsMetric value="False" />
+          <OutputUnits>Miles</OutputUnits>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=SpatialObj Destination=Destination_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=SpatialObj Destination=Destination_SpatialObj" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxDistance" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="438" y="174" width="156" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>find Next closest Point</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="534" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="DistanceMiles" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DistanceMiles - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=SpatialObj Destination=Destination_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=SpatialObj Destination=Destination_SpatialObj" type="String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="DistanceMiles" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="630" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=SpatialObj Destination=Destination_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=SpatialObj Destination=Destination_SpatialObj" type="String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="DistanceMiles" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="630" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Skip</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Skip 1st 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=SpatialObj Destination=Destination_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=SpatialObj Destination=Destination_SpatialObj" type="String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="DistanceMiles" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="SupplyID" selected="False" />
+            <SelectField field="SpatialObj" selected="False" />
+            <SelectField field="Destination_SupplyID" selected="True" rename="SupplyID" />
+            <SelectField field="Destination_SpatialObj" selected="True" rename="SpatialObj" />
+            <SelectField field="DistanceMiles" selected="False" />
+            <SelectField field="Direction" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="SupplyID" selected="False" />
+            <SelectField field="SpatialObj" selected="False" />
+            <SelectField field="DistanceMiles" selected="False" />
+            <SelectField field="Direction" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="810" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="186" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterate</Name>
+          <Abbrev>I</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Iterate</AnnotationText>
+          <DefaultAnnotationText>I Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="330" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input49</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="24" />
+              <Fields>
+                <Field name="SupplyID" />
+                <Field name="SpatialObj" />
+                <Field name="Destination_SupplyID" />
+                <Field name="Destination_SpatialObj" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10000</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.862801, 37.470253 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10001</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.901887, 37.478414 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10002</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.155919, 39.823130 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10003</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.081675, 39.815938 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10004</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.069952, 39.798486 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10005</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.082688, 39.856532 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10006</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.129197, 39.812936 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10007</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.817052, 39.188366 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10008</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10009</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.820803, 39.189151 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10011</c>
+                  <c>{ "type": "Point", "coordinates": [ -104.829160, 39.637557 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10012</c>
+                  <c>{ "type": "Point", "coordinates": [ -104.809401, 39.725757 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10013</c>
+                  <c>{ "type": "Point", "coordinates": [ -104.810548, 39.652886 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10014</c>
+                  <c>{ "type": "Point", "coordinates": [ -104.789238, 39.673599 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10015</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.518442, 39.634192 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10016</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.522504, 39.635509 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10017</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.512920, 39.644000 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10018</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.512920, 39.644000 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10019</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.512920, 39.644000 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10020</c>
+                  <c>{ "type": "Point", "coordinates": [ -107.033805, 39.369156 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10021</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.282299, 40.058102 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10022</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.258632, 40.016513 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10023</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.281688, 40.023507 ] }</c>
+                </r>
+                <r>
+                  <c>10010</c>
+                  <c>{ "type": "Point", "coordinates": [ -106.818076, 39.193714 ] }</c>
+                  <c>10024</c>
+                  <c>{ "type": "Point", "coordinates": [ -105.249385, 39.984629 ] }</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="186" y="186" width="84" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Iterative Output</Text>
+          <Font name="Arial" size="9.75" style="1" />
+          <TextColor name="Black" />
+          <FillColor r="255" g="188" b="121" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="714" y="78" width="60" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Output</Text>
+          <Font name="Arial" size="9.75" style="1" />
+          <TextColor name="Black" />
+          <FillColor r="255" g="128" b="14" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="330" y="186" width="52" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Input</Text>
+          <Font name="Arial" size="9.75" style="1" />
+          <TextColor name="Black" />
+          <FillColor r="162" g="200" b="236" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="906" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Destination_SupplyID</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-04-25 07:57:20</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-04-25 07:57:20</StartDate>
+              <EndDate>2021-04-25 07:57:20</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Destination_SupplyID])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="SupplyID" source="TextInput:" type="Int16" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Destination_SupplyID" source="TextInput:" type="Int16" />
+            <Field name="Destination_SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="810" y="198" width="156" height="64" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Either Switch the inputs on the append tool or make sure the filter is in place so that we can "run out of records"</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="True" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (49)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Iterative_NextClosestLocation</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (23)</Name>
+          <ToolId value="23" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description />
+              <Name>Macro Output (8)</Name>
+              <ToolId value="8" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (24)</Description>
+              <Name>Macro Output (24)</Name>
+              <ToolId value="24" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (49)</Name>
+              <ToolId value="49" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input49</Input>
+        <Output>Iterate</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="8" Selected="False" />
+        <Tool ToolId="24" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
